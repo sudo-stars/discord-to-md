@@ -7,15 +7,20 @@ int main(int argc, char *argv[]){
         printf("Input file required. \n Argument count: %d\n", argc);
         return 1;
     }
-
+    
     struct Server server;
-
+    
     if(load_server_from_json(argv[1], &server) != 0){
         printf("Unable to load server. \n");
         return 1;
     }
 
     printf("Server name: %s\n", server.name);
+    for (size_t i = 0; i < server.category_count; i++) {
+        printf("Category %zu: %s\n",
+            i,
+            server.categories[i].name);
+    }
 
     free_server(&server);
 
