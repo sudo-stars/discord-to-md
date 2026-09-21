@@ -2,8 +2,15 @@
 #define JSON_LOADER_H
 #include <stddef.h>
 
+struct Channel {
+    char *name;
+};
+
 struct Category {
     char *name;
+
+    struct Channel *channels;
+    size_t channel_count;
 };
 
 struct Server {

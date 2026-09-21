@@ -9,17 +9,22 @@ int main(int argc, char *argv[]){
     }
     
     struct Server server;
-    
+
     if(load_server_from_json(argv[1], &server) != 0){
         printf("Unable to load server. \n");
         return 1;
     }
 
-    printf("Server name: %s\n", server.name);
+    printf("Server: %s\n\n", server.name);
     for (size_t i = 0; i < server.category_count; i++) {
         printf("Category %zu: %s\n",
             i,
             server.categories[i].name);
+        for (size_t j = 0; j < server.categories[i].channel_count; j++) {
+            printf("Channel %zu: %s\n",
+                j,
+                server.categories[i].channels[j].name);
+        }
     }
 
     free_server(&server);

@@ -1,1 +1,1 @@
-{"name": "Test Server", "categories": ["Gaming", "Development", "Memes"]}
+{"name": "Test Server", "categories": [{"name": "Gaming", "channels": ["general", "clips"]}, {"name": "Development", "channels": ["programming", "help"]}, {"name": "Memes", "channels": ["shitposting"]}]}
