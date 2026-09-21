@@ -1,0 +1,12 @@
+build/
+*.o
+*.a
+*.so
+
+output/
+vault/
+
+.vscode/
+.idea/
+
+.DS_Store
