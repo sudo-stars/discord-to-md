@@ -11,6 +11,13 @@ int main(int argc, char *argv[]){
         printf("File inaccessibe or null.");
         return 1;
     }
+
+    char buffer[1024];
+    while(fgets(buffer, sizeof(buffer), file) != NULL){
+        printf("%s", buffer);
+    }
+
+
     fclose(file);
 
     printf("Succesfully opened file.");
