@@ -1,11 +1,19 @@
 #include <stdio.h>
 
 int main(int argc, char *argv[]){
-    printf("Arguments: %d\n", argc);
-
-    for(int i=0; i < argc; i++){
-        printf("Argument %d: %s\n", i, argv[i]);
+    if(argc < 2){
+        printf("Input file required. \n Argument count: %d\n", argc);
+        return 1;
     }
+
+    FILE *file = fopen(argv[1], "r");
+    if(file == NULL){
+        printf("File inaccessibe or null.");
+        return 1;
+    }
+    fclose(file);
+
+    printf("Succesfully opened file.");
 
     return 0;
 }
